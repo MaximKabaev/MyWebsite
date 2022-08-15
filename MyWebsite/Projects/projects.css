@@ -1,0 +1,9 @@
+body {
+    background-image: url(../Pictures/paper.jpg);
+    width: 100%;
+    height: 750px;
+}
+
+.project-links {
+    font-size: 50px;
+}

@@ -6,17 +6,32 @@ body {
     background-image: url(../Pictures/paper.jpg);
 }
 
-.header {
-    font-size: 50px;
-    font-family: HandWriting;
-    padding: 25px 0px 0px 50px;
+.post-line {
+    padding: 5% 0% 0% 0%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.section-block {
-    font-size: 25px;
-    font-family: HandWriting;
-    padding: 15px 0px 0px 50px;
-    width: 75%;
+.post {
+    list-style: none;
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#wifi-post {
+    background-image: url(../Pictures/wifi.jpg);
+    background-size: 400px;
+    background-repeat: no-repeat;
+}
+
+.post-name {
+    color: white;
+    font-family: Mono;
+    font-size: 50px;
+    text-align: left;
 }
 
 .home {
@@ -47,9 +62,4 @@ body {
 @font-face {
     font-family: PressStart;
     src: url(../Fonts/PressStart.ttf);
-}
-
-@font-face {
-    font-family: HandWriting;
-    src: url(../Fonts/HandWriting.ttf);
 }
