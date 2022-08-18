@@ -19,6 +19,21 @@ body {
     width: 75%;
 }
 
+.my-links{
+    display:flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.my-links ul{
+    list-style-type: none;
+}
+
+.my-links ul li{
+    display: inline-block;
+    padding: 0px 25px 0px 0px;
+}
+
 .home {
     display: flex;
     justify-content: center;
@@ -26,7 +41,7 @@ body {
 
 .home a {
     font-family: Barcode;
-    font-size: 75px;
+    font-size: 50px;
     color: black;
 }
 

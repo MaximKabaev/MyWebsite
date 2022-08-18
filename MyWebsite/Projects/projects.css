@@ -4,6 +4,65 @@ body {
     height: 750px;
 }
 
-.project-links {
+.project-links ul {
     font-size: 50px;
+
+    margin: 0;
+    padding: 5% 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    flex-direction:row;
+
+    list-style-type: none;
+
+    font-size: 75px;
+    font-family: HandWriting;
+}
+
+.project-links ul li{
+    padding:0px 35px 0px 0px;
+}
+
+.github-link{
+    font-family: Barcode;
+    color: black;
+}
+
+.github-link:hover{
+    color:red;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.home a {
+    font-family: Barcode;
+    font-size: 75px;
+    color: black;
+}
+
+.home a:hover {
+    color: red;
+}
+
+@font-face {
+    font-family: Barcode;
+    src: url(../Fonts/BarcodeFont.ttf);
+}
+
+@font-face {
+    font-family: Mono;
+    src: url(../Fonts/Mono.ttf);
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url(../Fonts/PressStart.ttf);
+}
+
+@font-face {
+    font-family: HandWriting;
+    src: url(../Fonts/HandWriting.ttf);
 }
