@@ -1,4 +1,4 @@
 # MyWebsite
 Literally My Website
 
-Hosted on http://albinauric.com domain.
+Hosted on albinauric.com (http://albinauric.com) domain.
