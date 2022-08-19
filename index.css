@@ -60,7 +60,7 @@ body ul li {
 .typing {
     width: 25ch;
     animation: typing 2.6s steps(25) forwards, blink .5s step-end infinite alternate-reverse;
-    animation-delay: 0.01s; /* a life saver, fixes the bug of the animation when the page is first opened (without cash) */
+    animation-delay: 0.1s; /* a life saver, fixes the bug of the animation when the page is first opened (without cash) */
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
