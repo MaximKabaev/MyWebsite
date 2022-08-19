@@ -1,0 +1,115 @@
+body {
+    /* background-image: url("Pictures/space.jpg");
+    background-repeat: repeat-y;
+    height: 750px;
+    background-position: center;
+    background-size: cover; */
+    background-color: black;
+    background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120%);
+    height: 100vh;
+    color: white;
+    text-shadow: 0 0 5px #C8C8C8;
+    overflow-x: hidden;
+}
+
+body ul {
+    margin: 0;
+    padding: 5% 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+body ul li {
+    /* display: inline; */
+    list-style: none;
+    padding: 0px 0px 15px 0px;
+}
+
+.navLink {
+    font-size: 55px;
+    font-family: Barcode;
+    color: #ffffff;
+}
+
+.navLink:hover {
+    color: red;
+}
+
+.small-btn {
+    width: 50px;
+    height: 25px;
+}
+
+.medium-btn {
+    width: 70px;
+    height: 30px;
+}
+
+.big-btn {
+    width: 150px;
+    height: 40px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+}
+
+.typing {
+    width: 25ch;
+    animation: typing 2.6s steps(25) forwards, blink .5s step-end infinite alternate-reverse;
+    animation-delay: 0.01s; /* a life saver, fixes the bug of the animation when the page is first opened (without cash) */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    font-family: PressStart;
+    /* color:#8429D9; */
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.paperImage {
+    position: absolute;
+    bottom: 100vh;
+}
+
+.paperImage.animated {
+    animation-name: paperAnim;
+    animation-duration: .75s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes paperAnim {
+    100% {
+        bottom: -1250px;
+    }
+}
+
+@font-face {
+    font-family: Barcode;
+    src: url(Fonts/BarcodeFont.ttf);
+}
+
+@font-face {
+    font-family: Mono;
+    src: url(Fonts/Mono.ttf);
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url(Fonts/PressStart.ttf);
+}

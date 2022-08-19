@@ -1,0 +1,78 @@
+body {
+    width: 100%;
+    height: 750px;
+    margin: 0;
+    padding: 0;
+    background-image: url(../Pictures/paper.jpg);
+}
+
+.post-line {
+    padding: 5% 0% 0% 0%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.post{
+    text-decoration: none;
+}
+
+.post:hover{
+    text-decoration: underline;
+}
+
+.post ul {
+    list-style: none;
+
+    width: 400px;
+    height: 300px;
+
+    background-color: black;
+
+    padding: 0px;
+}
+
+.post-name {
+    font-size: 30px;
+    color: black;
+    font-family: Mono;
+
+    text-align: center;
+}   
+
+
+.post-img {    
+    background-color: black;
+    width:400px;
+    height: 300px;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.home a {
+    font-family: Barcode;
+    font-size: 75px;
+    color: black;
+}
+
+.home a:hover {
+    color: red;
+}
+
+@font-face {
+    font-family: Barcode;
+    src: url(../Fonts/BarcodeFont.ttf);
+}
+
+@font-face {
+    font-family: Mono;
+    src: url(../Fonts/Mono.ttf);
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url(../Fonts/PressStart.ttf);
+}
