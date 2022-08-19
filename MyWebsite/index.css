@@ -59,7 +59,8 @@ body ul li {
 
 .typing {
     width: 25ch;
-    animation: typing 2.6s steps(25), blink .5s step-end infinite alternate-reverse;
+    animation: typing 2.6s steps(25) forwards, blink .5s step-end infinite alternate-reverse;
+    animation-delay: 0.01s; /* a life saver, fixes the bug of the animation when the page is first opened (without cash) */
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -83,12 +84,12 @@ body ul li {
 
 .paperImage {
     position: absolute;
-    bottom: 1350px;
+    bottom: 100vh;
 }
 
 .paperImage.animated {
     animation-name: paperAnim;
-    animation-duration: 2s;
+    animation-duration: .75s;
     animation-fill-mode: forwards;
 }
 

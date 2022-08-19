@@ -10,36 +10,41 @@ body {
     padding: 5% 0% 0% 0%;
     display: flex;
     justify-content: space-evenly;
-}
-
-.post {
     list-style: none;
-    background-color: black;
-    width: 600px;
-    height: 600px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
 }
 
-#wifi-post {
-    background-image: url(../Pictures/wifiLogin.jpg);
-    background-repeat: no-repeat;
-    background-size: 600px 475px;
-    background-position: 0px 125px;
+.post{
+    text-decoration: none;
+}
+
+.post:hover{
+    text-decoration: underline;
+}
+
+.post ul {
+    list-style: none;
+
+    width: 400px;
+    height: 300px;
+
+    background-color: black;
+
+    padding: 0px;
 }
 
 .post-name {
-    color: white;
+    font-size: 30px;
+    color: black;
     font-family: Mono;
-    font-size: 37px;
 
-    text-decoration: none;
+    text-align: center;
+}   
 
-    text-align:center;
-    
-    width:100%;
-    height: 100%;
+
+.post-img {    
+    background-color: black;
+    width:400px;
+    height: 300px;
 }
 
 .home {
