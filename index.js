@@ -7,6 +7,17 @@
 
 // location.replace('https://www.albinauric.com/index.html');
 
+var typing;
+
+let stateCheck = setInterval(() => {
+    if (document.readyState === 'complete') {
+      clearInterval(stateCheck);
+      typing = document.getElementsByClassName("typing")[0];
+
+      typing.classList.add("added");
+    }
+}, 100);  
+
 var paper;
 
 function PlayAnimationAbout() {
