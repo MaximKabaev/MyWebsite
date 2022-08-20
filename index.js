@@ -5,6 +5,8 @@
 //     }, 1500);
 // });
 
+location.replace('https://www.albinauric.com/index.html');
+
 var paper;
 
 function PlayAnimationAbout() {
