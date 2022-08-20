@@ -1,0 +1,78 @@
+html{
+    background-image: url(../../Pictures/paper.jpg);
+}
+
+.home{
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.home li a{
+    padding: 0px 25px;
+
+    font-size: 50px;
+    font-family: Barcode;
+    color: black;
+}
+
+.home li a:hover{
+    color: red;
+}
+
+header{
+    font-size: 50px;
+    font-family: HandWriting;
+
+    text-align: center;
+}
+
+.guide-body{
+    font-family: HandWriting;
+    font-size:25px;
+
+    padding: 50px 0px;
+}
+
+.introduction{
+    width: 85%;
+    margin: auto;
+}
+
+.guide-body ul{
+    list-style-type:decimal;
+}
+
+.guide-body ul li{
+    list-style-type:decimal;
+
+    padding: 25px 0px;
+
+    width: 90%;
+    margin: auto;
+}
+
+.guide-body ul li div{
+    padding:15px 0px;
+}
+
+@font-face {
+    font-family: Barcode;
+    src: url(../../Fonts/BarcodeFont.ttf);
+}
+
+@font-face {
+    font-family: Mono;
+    src: url(../../Fonts/Mono.ttf);
+}
+
+@font-face {
+    font-family: PressStart;
+    src: url(../../Fonts/PressStart.ttf);
+}
+
+@font-face {
+    font-family: HandWriting;
+    src: url(../../Fonts/HandWriting.ttf);
+}
