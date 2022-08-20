@@ -5,7 +5,7 @@
 //     }, 1500);
 // });
 
-location.replace('https://www.albinauric.com/index.html');
+// location.replace('https://www.albinauric.com/index.html');
 
 var paper;
 
