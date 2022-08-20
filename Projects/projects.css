@@ -1,35 +1,15 @@
 body {
     background-image: url(../Pictures/paper.jpg);
-    width: 100%;
-    height: 750px;
+    background-size: 100vw 100vh;
+
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 
-.project-links ul {
-    font-size: 50px;
-
-    margin: 0;
-    padding: 5% 0% 0% 0%;
-    display: flex;
-    align-items: center;
-    flex-direction:row;
-
-    list-style-type: none;
-
-    font-size: 75px;
+.main-text{
+    font-size: 4vmax;
     font-family: HandWriting;
-}
-
-.project-links ul li{
-    padding:0px 35px 0px 0px;
-}
-
-.github-link{
-    font-family: Barcode;
-    color: black;
-}
-
-.github-link:hover{
-    color:red;
+    text-align: center;
 }
 
 .home {
@@ -39,7 +19,7 @@ body {
 
 .home a {
     font-family: Barcode;
-    font-size: 75px;
+    font-size: 5vmax;
     color: black;
 }
 

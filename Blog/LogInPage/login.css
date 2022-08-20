@@ -10,9 +10,9 @@ html{
 }
 
 .home li a{
-    padding: 0px 25px;
+    padding: 0px 5vw;
 
-    font-size: 50px;
+    font-size: 5vmax;
     font-family: Barcode;
     color: black;
 }
@@ -22,17 +22,21 @@ html{
 }
 
 header{
-    font-size: 50px;
+    font-size: 3vmax;
     font-family: HandWriting;
 
     text-align: center;
+
+    padding: 2vh 0vh 0vh 0vh;
+    font-weight: bold;
 }
 
 .guide-body{
     font-family: HandWriting;
-    font-size:25px;
 
-    padding: 50px 0px;
+    padding: 3vh 0px;
+
+    font-size:2vmax;
 }
 
 .introduction{
@@ -51,10 +55,15 @@ header{
 
     width: 90%;
     margin: auto;
+
+    font-family: HandWriting;
+    font-weight: bold;
 }
 
 .guide-body ul li div{
     padding:15px 0px;
+    font-size:2vmax;
+    font-weight:normal;
 }
 
 @font-face {
