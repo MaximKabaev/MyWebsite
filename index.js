@@ -9,14 +9,36 @@
 
 var typing;
 
+var i = 0;
+var txt = 'Welcome to my Website :)';
+var speed = 75;
+
 let stateCheck = setInterval(() => {
+    typing = document.getElementsByClassName("typing")[0];
     if (document.readyState === 'complete') {
       clearInterval(stateCheck);
-      typing = document.getElementsByClassName("typing")[0];
+      typeWriter();
 
-      typing.classList.add("added");
+    //   typing.classList.remove("preload");
+    //   typing.classList.add("added");
     }
+    // else{
+    //     typing.classList.add("preload");
+    // }
 }, 100);  
+
+//TYPING ANIMATION
+//
+
+function typeWriter() {
+  if (i < txt.length) {
+    typing.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+//
+//END OF ANIMATION
 
 var paper;
 

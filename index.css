@@ -57,23 +57,40 @@ body ul li {
     padding-top: 20%;
 }
 
-.typing {
+.typing{
+    visibility: visible;
+
+    font-size: 2em;
+    font-family: PressStart;
+    color:white;
+
+    overflow: hidden;
+    border-right: 3px solid;
+
+    animation: blink .5s step-end infinite alternate-reverse;
+}
+
+/* .typing.preload {
     visibility: hidden;
+    animation: none;
+    animation-duration: 0s;
+    -webkit-animation-duration: 0s;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s;
 }
 
 .typing.added {
     visibility: visible;
     width: 25ch;
     animation: typing 2.6s steps(25) forwards, blink .5s step-end infinite alternate-reverse;
-    animation-delay: 0.1s; /* a life saver, fixes the bug of the animation when the page is first opened (without cash) */
+    animation-delay: 0.1s; 
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
     font-family: monospace;
     font-size: 2em;
     font-family: PressStart;
-    /* color:#8429D9; */
-}
+    color:#8429D9;
+} */
 
 @keyframes typing {
     from {
