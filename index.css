@@ -6,15 +6,16 @@ body {
     background-size: cover; */
     background-color: black;
     background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120%);
-    height: 100vh;
+    height: 100vmin;
     color: white;
     text-shadow: 0 0 5px #C8C8C8;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 
 body ul {
     margin: 0;
-    padding: 5% 0% 0% 0%;
+    padding: 7vmax 0vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,11 +24,11 @@ body ul {
 body ul li {
     /* display: inline; */
     list-style: none;
-    padding: 0px 0px 15px 0px;
+    padding: 0vw 0vw 3vmax 0vw;
 }
 
 .navLink {
-    font-size: 55px;
+    font-size: 4vmax;
     font-family: Barcode;
     color: #ffffff;
 }
@@ -36,36 +37,21 @@ body ul li {
     color: red;
 }
 
-.small-btn {
-    width: 50px;
-    height: 25px;
-}
-
-.medium-btn {
-    width: 70px;
-    height: 30px;
-}
-
-.big-btn {
-    width: 150px;
-    height: 40px;
-}
-
 .wrapper {
     display: flex;
     justify-content: center;
-    padding-top: 20%;
+    padding-top: 10vmax;
 }
 
 .typing{
     visibility: visible;
 
-    font-size: 2em;
+    font-size: 3vmax;
     font-family: PressStart;
     color:white;
 
     overflow: hidden;
-    border-right: 3px solid;
+    border-right: 0.5vmax solid;
 
     animation: blink .5s step-end infinite alternate-reverse;
 }
