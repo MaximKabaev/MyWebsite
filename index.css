@@ -14,11 +14,15 @@ body {
     overflow-y: hidden;
 
     width:auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #content-body ul {
     margin: 0;
-    padding: 7vmax 0vw;
+    padding: 65px 0vw;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,11 +32,11 @@ body {
 #content-body ul li {
     /* display: inline; */
     list-style: none;
-    padding: 0vw 0vw 3vmax 0vw;
+    padding: 0vw 0vw 20px 0vw;
 }
 
 .navLink {
-    font-size: 4vmax;
+    font-size: 50px;
     font-family: Barcode;
     color: #ffffff;
 }
@@ -44,18 +48,17 @@ body {
 .wrapper {
     display: flex;
     justify-content: center;
-    padding-top: 25vh;
 }
 
 .typing{
     visibility: visible;
 
-    font-size: 3vw;
+    font-size: 35px;
     font-family: PressStart;
     color:white;
 
     overflow: hidden;
-    border-right: 0.5vmax solid;
+    border-right: 5px solid;
 
     animation: blink .5s step-end infinite alternate-reverse;
 }
@@ -108,6 +111,39 @@ body {
 @keyframes paperAnim {
     100% {
         bottom: -1250px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .typing{
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    .typing{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .typing{
+        font-size: 15px;
+    }
+
+    .navLink {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .typing{
+        font-size: 10px;
+    }
+
+    .navLink {
+        font-size: 35px;
     }
 }
 

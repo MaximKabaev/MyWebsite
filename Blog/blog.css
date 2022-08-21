@@ -5,10 +5,11 @@ body {
 }
 
 .post-line {
-    padding: 0vw 0vw 10vmax 0vw;
+    padding: 0vw 0vw 50px 0vw;
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    flex-direction: row;
 }
 
 .post{
@@ -32,7 +33,7 @@ body {
 }
 
 .post-name {
-    font-size: 2vmax;
+    font-size: 20px;
     color: black;
     font-family: Mono;
 
@@ -55,12 +56,38 @@ body {
 
 .home a {
     font-family: Barcode;
-    font-size: 5vmax;
+    font-size: 60px;
     color: black;
 }
 
 .home a:hover {
     color: red;
+}
+
+@media screen and (max-width: 700px){
+    .post-line{
+        flex-direction: column;
+        align-items: center;
+        padding:0px;
+    }
+
+    .post-line>li{
+        padding: 0px 0px 75px 0px;
+    }
+
+    .home a{
+        font-size: 50px;
+    }
+
+    .post ul{
+        width: 60vw;
+        height: 50vw;
+    }
+
+    .post-img{
+        width:60vw;
+        height: 50vw;
+    }
 }
 
 @font-face {

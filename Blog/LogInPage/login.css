@@ -1,4 +1,4 @@
-html{
+body{
     background-image: url(../../Pictures/paper.jpg);
 }
 
@@ -12,7 +12,7 @@ html{
 .home li a{
     padding: 0px 5vw;
 
-    font-size: 5vmax;
+    font-size:75px;
     font-family: Barcode;
     color: black;
 }
@@ -22,7 +22,7 @@ html{
 }
 
 header{
-    font-size: 3vmax;
+    font-size: 45px;
     font-family: HandWriting;
 
     text-align: center;
@@ -36,7 +36,7 @@ header{
 
     padding: 3vh 0px;
 
-    font-size:2vmax;
+    font-size:30px;
 }
 
 .introduction{
@@ -62,8 +62,26 @@ header{
 
 .guide-body ul li div{
     padding:15px 0px;
-    font-size:2vmax;
+    font-size:30px;
     font-weight:normal;
+}
+
+@media screen and (max-width: 700px){
+    .home li a{
+        font-size: 55px;
+    }
+
+    header{
+        font-size: 30px;
+    }
+
+    .guide-body{
+        font-size: 20px;
+    }
+
+    .guide-body ul li div{
+        font-size: 20px;
+    }
 }
 
 @font-face {
