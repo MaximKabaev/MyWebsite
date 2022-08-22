@@ -10,6 +10,10 @@ body {
 
 }
 
+.invisible{
+    visibility: hidden;
+}
+
 #content-body{
     background-color: black;
     background-image: radial-gradient( rgba(0, 150, 0, 0.75), black 120%);
