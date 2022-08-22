@@ -19,6 +19,20 @@ body {
     width: 75%;
 }
 
+.tools{
+    display: inline;
+}
+
+.tools li{
+    display: inline;
+    padding: 0px 15px;
+}
+
+.tools li a img{
+    height: 65px;
+    width:auto;
+}
+
 .home {
     display: flex;
     justify-content: center;
@@ -65,6 +79,23 @@ body {
         font-size: 45px;
         padding:0px 0px 25px 0px;
     }
+
+    .tools li a img{
+        height: 40px;
+        width:auto;
+    }
+
+    .tools{
+        padding: 0px;
+    }
+
+    .tools ul{
+        padding: 0px 0px 0px 35px;
+    }
+    
+    .tools li{
+        padding: 0px;
+    }
 }
 
 @media only screen and (max-device-width: 500px){
@@ -76,6 +107,24 @@ body {
     .section-block {
         font-size: 17px;
         padding:0px 0px 0px 25px;
+    }
+
+    .tools li a img{
+        height: 35px;
+        width:auto;
+        padding: 0px;
+    }
+
+    .tools{
+        padding: 0px;
+    }
+
+    .tools ul{
+        padding: 0px 0px 0px 25px;
+    }
+    
+    .tools li{
+        padding: 0px;
     }
 }
 
