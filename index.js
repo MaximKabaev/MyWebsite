@@ -7,6 +7,12 @@
 
 // location.replace('https://www.albinauric.com/index.html');
 
+var contentBodyElement = document.getElementById("content-body");
+contentBodyElement.style.display = "visible";
+
+var bodyElement = document.getElementById("body");
+bodyElement.style.backgroundImage = "url('Pictures/paper.jpg')";
+
 var typing;
 
 var i = 0;
