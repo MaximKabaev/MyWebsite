@@ -36,6 +36,7 @@ let stateCheck = setInterval(() => {
 //TYPING ANIMATION
 //
 
+
 function typeWriter() {
   if (i < txt.length) {
     typing.innerHTML += txt.charAt(i);
