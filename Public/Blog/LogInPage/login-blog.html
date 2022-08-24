@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="login-blog.js" defer></script>
+
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="login-blog.css" />
+         <ul class="home">
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../../">Home</a></li>
+        </ul> 
+    </head>
+    <header class="header">
+        
+        Common iOS Wi-Fi Log in issues
+        
+    </header> 
+
+    <body>
+        <div class="guide-body">
+        
+            <div class="introduction">
+                Whether public Wi-Fi is free or not, iPhones may display a pop-up authorization window. In this guide, I will show you how to fix some of the most common problems with these pop-up windows.
+            </div>
+            <ul>
+                <li>
+                    The pop-up window needs to be exited to complete the authentication, but Wi-Fi disconnects on exit.
+                    <div>
+                        This might happen due to a bad log in design. 
+                        For example, to connect to the Wi-Fi, the user needs to call a phone number, which makes the pop-up window close. 
+                        Also, simply opening the log-in window in Safari will not work because the Wi-Fi gets disconnected when the pop-up window is closed.
+                    </div>
+                    <div>
+                        First, tap the "i" next to the Wi-Fi network you are aiming to connect to. Tap "Configure Proxy". 
+                        Choose "Manual". After that, put "127.0.0.1"into the "Server" and "80" into the port. Press "Save".
+                    </div>
+                    <div>
+                        Try to connect to the network again after following these steps. 
+                        Tap the "i" again. Look at the "Router" IP address under "IPV4 ADDRESS" and copy it by holding it. 
+                        Now go to Safari and put that IP address you just copied in the search bar. 
+                        The authentication window should appear and will not go away now. Complete the authentication and come back to the settings. 
+                        Now, tap the "i" once again next to the Wi-Fi network you are trying to connect to. Go to "Configure Proxy" and set it to "Off". Now, connect to the Wi-Fi as you normally would, and everything should work fine now.
+                    </div>
+                </li>
+    
+                <li>
+                    It appears that Wi-Fi is connected, but the pop-up window doesn't appear.
+                    <div>
+                        Go to Safari and type in "apple.com" or "google.com". The Wi-Fi log-in window will appear when Safari attempts to open the website.
+                    </div>
+                </li>
+    
+                <li>
+                    Wi-Fi is connected and a pop-up window shows up, but the window has to be exited to complete the authentication.
+                    <div>
+                        Try to follow the second problem (input "apple.com" or "google.com" into Safari).
+                    </div>
+                </li>
+    
+                <li>
+                    "No Internet connection" error
+                    <div>
+                        Select the "i" next to the Wi-Fi you want to connect to. Tap the "Forget the network" button. 
+                        Reconnect your Wi-Fi by clicking it again. The Wi-Fi signal might be too weak, so try moving closer to the router. There may also be a problem at the other site. For example, a cafe's Wi-Fi may be down temporarily due to some issue.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="comment-section">
+            <div class="header">
+                Comments
+            </div>
+            <div class="input-section">
+                <input class="input-field"> <input type="button" value="COMMENT" class="send-button">
+            </div>
+            <div class="comments">
+                <ul>
+                    <li id="1">
+                        <div class="comment-text">comment-1 sjka;hfj hdjslkh fjh dklahf kljahsklf hkldaswhf lkdjshf lkajs dhflsd</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>    
+</html>

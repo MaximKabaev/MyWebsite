@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCTyOU0jTBQQsewkl2UONMUh-87xClLnBs",
+                authDomain: "my-personal-website-21.firebaseapp.com",
+                projectId: "my-personal-website-21",
+                storageBucket: "my-personal-website-21.appspot.com",
+                messagingSenderId: "743119096984",
+                appId: "1:743119096984:web:d23715c8d5caa3d06c54ed",
+                measurementId: "G-K6YHWNH92P"
+
+            };
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script defer src="signin.js"></script>
+        <link rel="stylesheet" type="text/css" href="signin.css" />
+    </head>
+    <body>
+        <ul class="providers">
+            <li><button id="signin-google">Sign in with Google</button></li>
+            <li><button id="signin-github">Sign in with Github</button></li>
+            <li><button id="signin-email">Sign in with email</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "firebase": "^9.9.3",
+    "g": "^2.0.1"
+  },
+  "name": "mywebsite",
+  "description": "My personal static Website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximKabaev/MyWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaximKabaev/MyWebsite/issues"
+  },
+  "homepage": "https://github.com/MaximKabaev/MyWebsite#readme"
+}
