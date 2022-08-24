@@ -13,6 +13,7 @@ auth.onAuthStateChanged(user => {
         sendButton.onclick = function() {
             var data = inputField.value;
             inputField.value = '';
+            inputField.style.height = "35px";
             applyToFirebase(firebase, user, data, 'login-blog-comments');
         };
     } else {
@@ -29,4 +30,12 @@ auth.onAuthStateChanged(user => {
 
 //Get all comments from firebase and display them in the page
 readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-list'));
+
+//For comment input field..
+//Automatically resize the input field to fit the text
+
+inputField.oninput = function() {
+    inputField.style.height = "35px";
+    inputField.style.height = (inputField.scrollHeight+20)+"px";
+}
 

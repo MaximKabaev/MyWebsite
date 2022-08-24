@@ -124,6 +124,8 @@ body{
     font-size: 20px;
     font-family: Mono;
     font-weight: bold;
+    resize: none;
+    overflow: hidden;
 }
 
 #send-button{
@@ -178,6 +180,7 @@ body{
     background-color: black;
     color: black;
 }
+  
 
 @media only screen and (max-device-width: 700px){
     .home li a{
