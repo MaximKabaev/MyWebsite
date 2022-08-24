@@ -35,56 +35,26 @@ const whenSignedIn = document.getElementById('whenSignedIn');
 const whenSignedOut = document.getElementById('whenSignedOut');
 const userDetails = document.getElementById('userDetails');
 
-var userName = '';
-
 auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
-        userName = `${user.displayName}`;
+        userDetails.innerHTML = `${user.displayName}`;
     } else {
         // not signed in
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
-        userName = 'Maxim kabaev';
+        userDetails.innerHTML = 'Maxim Kabaev';
     }
 });
+
 
 /////////////////////////////////////////////////////////////////////////////////////
 //Check appropriate font size for welcome message
 
-const _typing = document.getElementById('tp');
-_typing.innerHTML = 'Welcome' + ' ' + userName + ' ' + 'to my Website :)';
-_typing.style.hidden = true;
 
-var typingFontSize = 100;
-_typing.style.fontSize = (typingFontSize) + 'px';
-
-while(check(_typing)){
-    typingFontSize = typingFontSize - 1;
-    _typing.style.fontSize = (typingFontSize) + 'px';
-}
-
-console.log(typingFontSize);
-
-
-function check(el) {
-    var curOverf = el.style.overflow;
-      
-    if ( !curOverf || curOverf === "visible" )
-        el.style.overflow = "hidden";
-      
-    var isOverflowing = el.clientWidth < el.scrollWidth
-        || el.clientHeight < el.scrollHeight;
-      
-    el.style.overflow = curOverf;
-      
-    return isOverflowing;
-}
-
-
-
+const _typing = document.getElementById('tp');;
 
 //Assigning/Removing class to navlink class
 var navLinks = document.querySelectorAll(".nav-link-parent");
@@ -126,7 +96,7 @@ let stateCheck = setInterval(() => {
 //TYPING ANIMATION
 //
 function typeWriter() {
-    var txt = 'Welcome' + ' ' + userName + ' ' + 'to my Website :)';
+    var txt = 'Welcome to my Website :)';
     var speed = 75;
     if (i < txt.length) {
         _typing.innerHTML += txt.charAt(i);
@@ -198,7 +168,7 @@ function LeavingPage(){
     contentBodyElement.style.display = "none";
 
     var bodyElement = document.getElementById("body");
-    bodyElement.style.backgroundImage = "url('Pictures/paper.jpg')";
+    bodyElement.style.backgroundImage = "url('Pictures/paper.webp')";
 }
 
 setTimeout(function(){

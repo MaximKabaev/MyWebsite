@@ -25,7 +25,7 @@ body {
 #content-body{
     overflow-x: hidden;
     overflow-y: hidden;
-    height:100vh;
+    height:90vh;
 
     width:auto;
 
@@ -35,11 +35,15 @@ body {
 }
 
 .version{
-    position:absolute;
-    padding:0;
-    margin:0;
     color: white;
     font-size: 10px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    width: 50%;
+    margin-left: 10px;
 }
 
 .sign-in{
@@ -49,7 +53,6 @@ body {
     top: 0;
     right: 0;
     margin:0;
-    font-size: 10px;
     padding:15px;
 
     font-size: 35px;
@@ -60,6 +63,11 @@ body {
 
 .sign-in:hover{
     color: red;
+}
+
+#userDetails{
+    font-size:25px;
+    padding:15px;
 }
 
 #content-body ul {
@@ -90,11 +98,12 @@ body {
 .wrapper {
     display: flex;
     justify-content: center;
+    width:100%;
 }
 
 .typing{
-    visibility: visible;
-
+    font-size: 35px;
+   
     font-family: PressStart;
     color:white;
 
@@ -159,12 +168,28 @@ body {
     .typing{
         font-size: 25px;
     }
+
+    #userDetails{
+        font-size:20px;
+    }
+
+    .sign-in{
+        font-size: 30px;
+    }
 }
 
 
 @media only screen and (max-device-width: 700px){
     .typing{
         font-size: 20px;
+    }
+
+    #userDetails{
+        font-size:15px;
+    }
+
+    .sign-in{
+        font-size: 30px;
     }
 }
 
@@ -176,6 +201,14 @@ body {
     .navLink {
         font-size: 40px;
     }
+
+    #userDetails{
+        font-size:10px;
+    }
+
+    .sign-in{
+        font-size: 25px;
+    }
 }
 
 @media only screen and (max-device-width: 420px){
@@ -185,6 +218,14 @@ body {
 
     .navLink {
         font-size: 35px;
+    }
+
+    #userDetails{
+        font-size:10px;
+    }
+
+    .sign-in{
+        font-size: 25px;
     }
 }
 
