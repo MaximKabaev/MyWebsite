@@ -130,7 +130,7 @@ body{
     overflow: hidden;
 }
 
-#send-button{
+#send-button, #signin-button{
     border-radius: 5px;
     border: 1px solid black;
     font-size: 20px;
@@ -213,7 +213,7 @@ body{
         font-size: 15px;
     }
 
-    #send-button{
+    #send-button, #signin-button{
         font-size: 15px;
     }
 }

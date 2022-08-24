@@ -23,6 +23,7 @@ export function readFirebase(firebase, collectionName, element){
     commentsRef = db.collection(collectionName);
 
     unsubscribe = commentsRef
+        .orderBy('createdAt', 'desc')
         .onSnapshot(querySnapshot => {
             
             // Map results to an array of li elements
