@@ -97,13 +97,10 @@ body{
 }
 
 .comments{
-    width: 85%;
+    width: 75%;
     padding:0px;
-    width:100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0px 0px 0px 75px;
 }
 
 .comments ul{
@@ -111,19 +108,19 @@ body{
     padding:0px;
 }
 
-.comments ul li{
+#comments-list li{
     outline:2px solid black;
+    display: inline-block;
     border-radius:5px;
 
+    min-width: 500px;
+    max-width: 75%;
     font-style: Mono;
     font-size:20px;
 
-    width:1000px;
-    height:150px;
-}
-
-.comment-text{
+    color: black;
     padding: 25px;
+    margin:25px;
 }
 
 .input-section input{
@@ -155,6 +152,26 @@ body{
 }
 
 .send-button:active{
+    background-color: black;
+    color: black;
+}
+
+#signin-button{
+    width:50%;
+    height:70px;
+
+    position: absolute;
+    left:25%;
+    background-color: white;
+    color: black;
+}
+
+#signin-button:hover{
+    background-color: black;
+    color: white;
+}
+
+#signin-button:active{
     background-color: black;
     color: black;
 }

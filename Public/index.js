@@ -25,7 +25,10 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 /// Sign in event handlers
 
-signInBtn.onclick = () => location.href = "SigninPage/signin.html";
+signInBtn.onclick = () => {
+    localStorage.setItem('pageAfterSignIn', '../index.html');
+    location.href = "SigninPage/signin.html";
+}
 
 signOutBtn.onclick = () => auth.signOut();
 
@@ -45,7 +48,7 @@ auth.onAuthStateChanged(user => {
         // not signed in
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
-        userDetails.innerHTML = 'Maxim Kabaev';
+        userDetails.innerHTML = '';
     }
 });
 

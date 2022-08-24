@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="login-blog.js" defer></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyCTyOU0jTBQQsewkl2UONMUh-87xClLnBs",
+                authDomain: "my-personal-website-21.firebaseapp.com",
+                projectId: "my-personal-website-21",
+                storageBucket: "my-personal-website-21.appspot.com",
+                messagingSenderId: "743119096984",
+                appId: "1:743119096984:web:d23715c8d5caa3d06c54ed",
+                measurementId: "G-K6YHWNH92P"
+
+            };
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <script type="module" defer src="login-blog.js"></script>
 
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="stylesheet" type="text/css" href="login-blog.css" />
@@ -72,13 +90,10 @@
                 Comments
             </div>
             <div class="input-section">
-                <input class="input-field"> <input type="button" value="COMMENT" class="send-button">
+                <input class="input-field" id="input-field"><input type="button" id="send-button" value="Comment" class="send-button"><input hidden='true' type="button" id="signin-button" value="Sign in">
             </div>
             <div class="comments">
-                <ul>
-                    <li id="1">
-                        <div class="comment-text">comment-1 sjka;hfj hdjslkh fjh dklahf kljahsklf hkldaswhf lkdjshf lkajs dhflsd</div>
-                    </li>
+                <ul id="comments-list">
                 </ul>
             </div>
         </div>

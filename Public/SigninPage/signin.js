@@ -28,7 +28,7 @@ signInGoogle.onclick = () => auth.signInWithPopup(googleProvider);
 
 auth.onAuthStateChanged(user => {
     if (user) {
-        location.href = "../index.html";	
+        location.href = localStorage.getItem('pageAfterSignIn');
     }
 });
 
