@@ -111,11 +111,13 @@ body{
 .comment-author{
     padding: 0px 25px;
     font-weight: bold;
+    font-family: HandWriting;
 }
 
 .comment-date{
     float: right;
     padding: 0px 25px;
+    font-family: HandWriting;
 }
 
 #input-field{
