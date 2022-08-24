@@ -66,24 +66,6 @@ body{
     font-weight:normal;
 }
 
-@media only screen and (max-device-width: 700px){
-    .home li a{
-        font-size: 55px;
-    }
-
-    header{
-        font-size: 30px;
-    }
-
-    .guide-body{
-        font-size: 20px;
-    }
-
-    .guide-body ul li div{
-        font-size: 20px;
-    }
-}
-
 .comment-section{
     display: flex;
     justify-content: center;
@@ -99,8 +81,6 @@ body{
 .comments{
     width: 75%;
     padding:0px;
-
-    padding: 0px 0px 0px 75px;
 }
 
 .comments ul{
@@ -111,19 +91,42 @@ body{
 #comments-list li{
     outline:2px solid black;
     display: inline-block;
-    border-radius:5px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
 
     min-width: 500px;
-    max-width: 75%;
+    max-width: 100%;
     font-style: Mono;
     font-size:20px;
 
     color: black;
-    padding: 25px;
-    margin:25px;
+
+    margin: 0px 0px 25px 0px;
 }
 
-.input-section input{
+.comment-text{
+    padding: 0px 25px;
+}
+
+.comment-author{
+    padding: 0px 25px;
+    font-weight: bold;
+}
+
+.comment-date{
+    float: right;
+    padding: 0px 25px;
+}
+
+#input-field{
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: Mono;
+    font-weight: bold;
+}
+
+#send-button{
     border-radius: 5px;
     border: 1px solid black;
     font-size: 20px;
@@ -174,6 +177,40 @@ body{
 #signin-button:active{
     background-color: black;
     color: black;
+}
+
+@media only screen and (max-device-width: 700px){
+    .home li a{
+        font-size: 55px;
+    }
+
+    header{
+        font-size: 30px;
+    }
+
+    .guide-body{
+        font-size: 20px;
+    }
+
+    .guide-body ul li div{
+        font-size: 20px;
+    }
+
+    #comments-list li{
+        min-width: 200px;
+    }
+
+    .comments{
+        width: 100%;
+    }
+
+    #input-field{
+        font-size: 15px;
+    }
+
+    #send-button{
+        font-size: 15px;
+    }
 }
 
 @font-face {
