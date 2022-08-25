@@ -19,6 +19,7 @@ export function applyToFirebase(firebase, user, data, collectionName) {
 export function readFirebase(firebase, collectionName, element){
     let unsubscribe;
     let commentsRef;
+    var anyData = false;
     const db = firebase.firestore();
     commentsRef = db.collection(collectionName);
 
@@ -46,12 +47,19 @@ export function readFirebase(firebase, collectionName, element){
                 </li>
                 <br>`;
                 if(doc.data().comment != ''){
+                    anyData = true;
                     return t;
                 }
 
             });
 
-            element.innerHTML = items.join('');
+            if(anyData){
+                element.innerHTML = items.join('');
+            }
+            else{
+                element.innerHTML = '<p>No comments yet</p>';
+                element.classList.add('no-comments');
+            }
 
         });
 
