@@ -9,6 +9,7 @@ auth.onAuthStateChanged(user => {
         inputField.hidden = false;
         sendButton.hidden = false;
         signinButton.hidden = true;
+        signinButton.style.position = 'absolute';
 
         sendButton.onclick = function() {
             var data = inputField.value;
@@ -20,6 +21,7 @@ auth.onAuthStateChanged(user => {
         inputField.hidden = true;
         sendButton.hidden = true;
         signinButton.hidden = false;
+        signinButton.style.position = 'relative';
 
         signinButton.onclick = function() {
             localStorage.setItem('pageAfterSignIn', '../Blog/LogInPage/login-blog.html');
@@ -35,7 +37,7 @@ readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-
 //Automatically resize the input field to fit the text
 
 inputField.oninput = function() {
-    inputField.style.height = "35px";
+    inputField.style.height = "50px";
     inputField.style.height = (inputField.scrollHeight+20)+"px";
 }
 

@@ -74,7 +74,7 @@ body{
 }
 
 .input-section{
-    padding: 50px 0px 10px 0px;
+    padding: 50px 0px;
     width: 75%;
 }
 
@@ -89,14 +89,14 @@ body{
 }
 
 #comments-list li{
-    outline:2px solid black;
+    /* outline:2px solid black; */
     display: inline-block;
-    border-radius: 10px;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    /* border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25); */
+    border-bottom: 2px solid black;
 
-    min-width: 500px;
-    max-width: 100%;
-    font-style: Mono;
+    width: 100%;
+    font-family: HandWriting;
     font-size:20px;
 
     color: black;
@@ -106,25 +106,28 @@ body{
 
 .comment-text{
     padding: 0px 25px;
+    font-size:30px;
 }
 
 .comment-author{
     padding: 0px 25px;
     font-weight: bold;
     font-family: HandWriting;
+    color:gray;
 }
 
 .comment-date{
     float: right;
     padding: 0px 25px;
     font-family: HandWriting;
+    color:gray;
 }
 
 #input-field{
     border-radius: 5px;
     border: 1px solid black;
     font-size: 20px;
-    font-family: Mono;
+    font-family: HandWriting;
     font-weight: bold;
     resize: none;
     overflow: hidden;
@@ -142,7 +145,7 @@ body{
 
 .input-field{
     width: 100%;
-    height: 50px;
+    height: 100px;
 }
 
 .send-button{
@@ -175,16 +178,17 @@ body{
 #signin-button{
     width:50%;
     height:70px;
-
-    position: absolute;
     left:25%;
     background-color: white;
     color: black;
+    font-size: 25px;
+    font-family: HandWriting;
 }
 
 #signin-button:hover{
     background-color: black;
     color: white;
+    transform: scale(1.01);
 }
 
 #signin-button:active{
@@ -211,11 +215,15 @@ body{
     }
 
     #comments-list li{
-        min-width: 200px;
+        width: 100%;
     }
 
     .comments{
         width: 100%;
+    }
+
+    .comment-text{
+        font-size:25px;
     }
 
     #input-field{
