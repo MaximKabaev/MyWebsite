@@ -172,6 +172,20 @@ function LeavingPage(){
 
     var bodyElement = document.getElementById("body");
     bodyElement.style.backgroundImage = "url('Pictures/paper.webp')";
+
+    whenSignedIn.hidden = true;
+    whenSignedOut.hidden = true;
+}
+
+function EnterPage(){
+    var contentBodyElement = document.getElementById("content-body");
+    contentBodyElement.style.display = "default";
+
+    var bodyElement = document.getElementById("body");
+    bodyElement.style.backgroundImage = "radial-gradient( rgba(0, 150, 0, 0.75), black 120%)";
+
+    whenSignedIn.hidden = true;
+    whenSignedOut.hidden = true;
 }
 
 setTimeout(function(){

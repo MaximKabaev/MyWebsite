@@ -22,18 +22,6 @@ body {
     height:100vh;
 }
 
-#content-body{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    height:90vh;
-
-    width:auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .version{
     color: white;
     font-size: 10px;
@@ -68,21 +56,31 @@ body {
 #userDetails{
     font-size:25px;
     padding:15px;
+    position: absolute;
+}
+
+#content-body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height:100vh;
+
+    width:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #content-body ul {
     margin: 0;
     padding: 65px 0vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-items: center;
 }
 
 #content-body ul li {
     /* display: inline; */
     list-style: none;
     padding: 0vw 0vw 20px 0vw;
+    text-align: center;
 }
 
 .navLink {
