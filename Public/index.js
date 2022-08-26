@@ -1,12 +1,5 @@
-// $('button').onClick(function() {
-//     $(".paperImage").addClass('animated');
-//     setTimeout(function() {
-//       $(".paperImage").removeClass('animated');
-//     }, 1500);
-// });
 
-// location.replace('https://www.albinauric.com/index.html');
-
+EnterPage();
 var contentBodyElement = document.getElementById("content-body");
 contentBodyElement.style.display = "visible";
 
@@ -159,6 +152,9 @@ function GetPaper() {
 function LeavingAnimation() {
     paper = GetPaper();
     paper.classList.add('animated');
+    
+    whenSignedIn.hidden = true;
+    whenSignedOut.hidden = true;
     // var navLinks = document.querySelectorAll(".nav-link-parent");
 
     // for(var i = 0; i < navLinks.length; i++){
@@ -172,20 +168,14 @@ function LeavingPage(){
 
     var bodyElement = document.getElementById("body");
     bodyElement.style.backgroundImage = "url('Pictures/paper.webp')";
-
-    whenSignedIn.hidden = true;
-    whenSignedOut.hidden = true;
 }
 
 function EnterPage(){
     var contentBodyElement = document.getElementById("content-body");
-    contentBodyElement.style.display = "default";
+    contentBodyElement.style.display = "flex";
 
     var bodyElement = document.getElementById("body");
     bodyElement.style.backgroundImage = "radial-gradient( rgba(0, 150, 0, 0.75), black 120%)";
-
-    whenSignedIn.hidden = true;
-    whenSignedOut.hidden = true;
 }
 
 setTimeout(function(){
