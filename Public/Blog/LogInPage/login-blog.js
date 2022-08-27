@@ -5,6 +5,7 @@ const sendButton = document.getElementById("send-button");
 const signinButton = document.getElementById("signin-button");
 const removeBtn = document.getElementsByClassName("remove-button");
 const auth = firebase.auth();
+const db = firebase.firestore();
 auth.onAuthStateChanged(user => {
     if (user) {
         inputField.hidden = false;
@@ -38,11 +39,11 @@ auth.onAuthStateChanged(user => {
 //Automatically resize the input field to fit the text
 
 inputField.oninput = function() {
-    inputField.style.height = "50px";
+    inputField.style.height = "100px";
     inputField.style.height = (inputField.scrollHeight+20)+"px";
 }
 
-let stateCheck = setInterval(() => {
+setInterval(() => {
     for(let i = 0; i < removeBtn.length; i++){
         removeBtn[i].onclick = function() {
             removeComment(this);

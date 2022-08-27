@@ -13,10 +13,14 @@ export function applyToFirebase(firebase, user, data, collectionName) {
         comment: data,
         createdAt: serverTimestamp(),
         name: user.displayName,
+    }).then(() => {
+        location.reload();
     });
+
+    
 }
 
-export function readFirebase(firebase, collectionName, element, user){
+export async function readFirebase(firebase, collectionName, element, user){
     let unsubscribe;
     let commentsRef;
     var anyData = false;
@@ -25,65 +29,64 @@ export function readFirebase(firebase, collectionName, element, user){
 
     unsubscribe = commentsRef
         .orderBy('createdAt', 'desc')
-        .onSnapshot(querySnapshot => {
-            
-            // Map results to an array of li elements
-
-            const items = querySnapshot.docs.map(doc => {
-
-                if(user != null && doc.data().author_uid == user.uid){
-                    var t = 
-                    `<li>
-                        <div class="comment-container">
-                            <div class="comment-author">
-                                <p>${doc.data().name}</p>
-                                <div class="remove-button" id=${doc.id}>
-                                    <button>Remove</button>
+        .get()
+        
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const items = querySnapshot.docs.map(doc => {
+                    if(user != null && doc.data().author_uid == user.uid){
+                        var t = 
+                        `<li>
+                            <div class="comment-container">
+                                <div class="comment-author">
+                                    <p>${doc.data().name}</p>
+                                    <div class="remove-button" id=${doc.id}>
+                                        <button>Remove</button>
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    <p>${doc.data().comment}</p>
+                                </div>
+                                <div class="comment-date">
+                                    <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
                                 </div>
                             </div>
-                            <div class="comment-text">
-                                <p>${doc.data().comment}</p>
+                        </li>
+                        <br>`;
+                    }
+                    else{
+                        var t = 
+                        `<li>
+                            <div class="comment-container">
+                                <div class="comment-author">
+                                    <p>${doc.data().name}</p>
+                                </div>
+                                <div class="comment-text">
+                                    <p>${doc.data().comment}</p>
+                                </div>
+                                <div class="comment-date">
+                                    <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
+                                </div>
                             </div>
-                            <div class="comment-date">
-                                <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <br>`;
+                        </li>
+                        <br>`;
+                    }
+    
+                    if(doc.data().comment != ''){
+                        anyData = true;
+                        return t;
+                    }
+    
+                });
+    
+                if(anyData){
+                    element.innerHTML = items.join('');
                 }
                 else{
-                    var t = 
-                    `<li>
-                        <div class="comment-container">
-                            <div class="comment-author">
-                                <p>${doc.data().name}</p>
-                            </div>
-                            <div class="comment-text">
-                                <p>${doc.data().comment}</p>
-                            </div>
-                            <div class="comment-date">
-                                <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <br>`;
+                    element.innerHTML = '<p>No comments yet</p>';
+                    element.classList.add('no-comments');
                 }
-
-                if(doc.data().comment != ''){
-                    anyData = true;
-                    return t;
-                }
-
             });
-
-            if(anyData){
-                element.innerHTML = items.join('');
-            }
-            else{
-                element.innerHTML = '<p>No comments yet</p>';
-                element.classList.add('no-comments');
-            }
-
         });
 }
 
