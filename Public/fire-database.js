@@ -31,27 +31,25 @@ export function readFirebase(firebase, collectionName, element, user){
 
             const items = querySnapshot.docs.map(doc => {
 
-                if(user != null){
-                    if(doc.data().author_uid == user.uid){
-                        var t = 
-                        `<li>
-                            <div class="comment-container">
-                                <div class="comment-author">
-                                    <p>${doc.data().name}</p>
-                                    <div class="remove-button" id=${doc.id}>
-                                        <button>Remove</button>
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    <p>${doc.data().comment}</p>
-                                </div>
-                                <div class="comment-date">
-                                    <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
+                if(user != null && doc.data().author_uid == user.uid){
+                    var t = 
+                    `<li>
+                        <div class="comment-container">
+                            <div class="comment-author">
+                                <p>${doc.data().name}</p>
+                                <div class="remove-button" id=${doc.id}>
+                                    <button>Remove</button>
                                 </div>
                             </div>
-                        </li>
-                        <br>`;
-                    }
+                            <div class="comment-text">
+                                <p>${doc.data().comment}</p>
+                            </div>
+                            <div class="comment-date">
+                                <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <br>`;
                 }
                 else{
                     var t = 
