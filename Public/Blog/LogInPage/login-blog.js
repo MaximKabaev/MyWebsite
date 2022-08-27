@@ -40,7 +40,7 @@ auth.onAuthStateChanged(user => {
 
 inputField.oninput = function() {
     inputField.style.height = "100px";
-    inputField.style.height = (inputField.scrollHeight+20)+"px";
+    inputField.style.height = (inputField.scrollHeight)+"px";
 }
 
 setInterval(() => {
