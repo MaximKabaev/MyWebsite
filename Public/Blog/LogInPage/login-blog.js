@@ -1,8 +1,9 @@
-import {applyToFirebase, readFirebase} from '../../fire-database.js';
+import {applyToFirebase, readFirebase, removeFromFirebase} from '../../fire-database.js';
 
 const inputField = document.getElementById("input-field");
 const sendButton = document.getElementById("send-button");
 const signinButton = document.getElementById("signin-button");
+const removeBtn = document.getElementsByClassName("remove-button");
 const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -17,6 +18,8 @@ auth.onAuthStateChanged(user => {
             inputField.style.height = "35px";
             applyToFirebase(firebase, user, data, 'login-blog-comments');
         };
+        //Get all comments from firebase and display them in the page
+        readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-list'), user);
     } else {
         inputField.hidden = true;
         sendButton.hidden = true;
@@ -27,11 +30,9 @@ auth.onAuthStateChanged(user => {
             localStorage.setItem('pageAfterSignIn', '../Blog/LogInPage/login-blog.html');
             location.href = '../../SigninPage/signin.html';
         };
+        readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-list'));
     }
 });
-
-//Get all comments from firebase and display them in the page
-readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-list'));
 
 //For comment input field..
 //Automatically resize the input field to fit the text
@@ -39,5 +40,17 @@ readFirebase(firebase, 'login-blog-comments', document.getElementById('comments-
 inputField.oninput = function() {
     inputField.style.height = "50px";
     inputField.style.height = (inputField.scrollHeight+20)+"px";
+}
+
+let stateCheck = setInterval(() => {
+    for(let i = 0; i < removeBtn.length; i++){
+        removeBtn[i].onclick = function() {
+            removeComment(this);
+        }
+    }
+}, 100);  
+
+function removeComment(element){
+    removeFromFirebase(firebase, 'login-blog-comments', element.id);
 }
 

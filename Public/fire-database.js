@@ -1,5 +1,5 @@
 export function applyToFirebase(firebase, user, data, collectionName) {
-    if(data == ''){
+    if(data == '' || data == ' '){
         return;
     }
     let commentsRef;
@@ -9,14 +9,14 @@ export function applyToFirebase(firebase, user, data, collectionName) {
     const { serverTimestamp } = firebase.firestore.FieldValue;
 
     commentsRef.add({
-        uid: user.uid,
+        author_uid: user.uid,
         comment: data,
         createdAt: serverTimestamp(),
-        name: user.displayName
+        name: user.displayName,
     });
 }
 
-export function readFirebase(firebase, collectionName, element){
+export function readFirebase(firebase, collectionName, element, user){
     let unsubscribe;
     let commentsRef;
     var anyData = false;
@@ -31,21 +31,46 @@ export function readFirebase(firebase, collectionName, element){
 
             const items = querySnapshot.docs.map(doc => {
 
-                var t = 
-                `<li>
-                    <div class="comment-container">
-                        <div class="comment-author">
-                            <p>${doc.data().name}</p>
+                if(user != null){
+                    if(doc.data().author_uid == user.uid){
+                        var t = 
+                        `<li>
+                            <div class="comment-container">
+                                <div class="comment-author">
+                                    <p>${doc.data().name}</p>
+                                    <div class="remove-button" id=${doc.id}>
+                                        <button>Remove</button>
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    <p>${doc.data().comment}</p>
+                                </div>
+                                <div class="comment-date">
+                                    <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
+                                </div>
+                            </div>
+                        </li>
+                        <br>`;
+                    }
+                }
+                else{
+                    var t = 
+                    `<li>
+                        <div class="comment-container">
+                            <div class="comment-author">
+                                <p>${doc.data().name}</p>
+                            </div>
+                            <div class="comment-text">
+                                <p>${doc.data().comment}</p>
+                            </div>
+                            <div class="comment-date">
+                                <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
+                            </div>
                         </div>
-                        <div class="comment-text">
-                            <p>${doc.data().comment}</p>
-                        </div>
-                        <div class="comment-date">
-                            <p>${new Date(doc.data().createdAt.seconds * 1000).toDateString()}</p>
-                        </div>
-                    </div>
-                </li>
-                <br>`;
+                    </li>
+                    <br>`;
+                }
+
                 if(doc.data().comment != ''){
                     anyData = true;
                     return t;
@@ -62,5 +87,19 @@ export function readFirebase(firebase, collectionName, element){
             }
 
         });
+}
+
+export function removeFromFirebase(firebase, collectionName, id){
+    const db = firebase.firestore();
+
+    console.log(id);
+
+    var commentsRef = db.collection(collectionName).doc(id);
+
+    commentsRef
+    .onSnapshot(function(doc) {
+        console.log("Current data: ", doc.data());
+        doc.ref.delete();
+    });
 
 }
