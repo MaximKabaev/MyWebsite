@@ -30,7 +30,6 @@ export async function readFirebase(firebase, collectionName, element, user){
     unsubscribe = commentsRef
         .orderBy('createdAt', 'desc')
         .get()
-        
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const items = querySnapshot.docs.map(doc => {
@@ -97,10 +96,13 @@ export function removeFromFirebase(firebase, collectionName, id){
 
     var commentsRef = db.collection(collectionName).doc(id);
 
-    commentsRef
-    .onSnapshot(function(doc) {
-        console.log("Current data: ", doc.data());
-        doc.ref.delete();
-    });
-
+    commentsRef.get()
+    .then(function(doc) {
+            const promises = [];
+            promises.push(doc.ref.delete());
+            return Promise.all(promises);
+        })
+        .then(() => {
+          window.location.reload()
+        });
 }
