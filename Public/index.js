@@ -13,6 +13,7 @@ console.log(firebase);
 const signInBtn = document.getElementById('signInBtn');
 const signOutBtn = document.getElementById('signOutBtn');
 
+const analytics = firebase.analytics();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -37,6 +38,7 @@ auth.onAuthStateChanged(user => {
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
         userDetails.innerHTML = `${user.displayName}`;
+        firebase.analytics().logEvent('login');
     } else {
         // not signed in
         whenSignedIn.hidden = true;
