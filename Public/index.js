@@ -24,7 +24,10 @@ signInBtn.onclick = () => {
     location.href = "SigninPage/signin.html";
 }
 
-signOutBtn.onclick = () => auth.signOut();
+signOutBtn.onclick = () => {
+    auth.signOut();
+    firebase.analytics().logEvent('logout');
+};
 
 //Checking if signed in
 
@@ -38,7 +41,6 @@ auth.onAuthStateChanged(user => {
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
         userDetails.innerHTML = `${user.displayName}`;
-        firebase.analytics().logEvent('login');
     } else {
         // not signed in
         whenSignedIn.hidden = true;
@@ -170,6 +172,8 @@ function LeavingPage(){
 
     var bodyElement = document.getElementById("body");
     bodyElement.style.backgroundImage = "url('Pictures/paper.webp')";
+
+    firebase.analytics().logEvent('leave-index');
 }
 
 function EnterPage(){

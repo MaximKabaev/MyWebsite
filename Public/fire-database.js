@@ -4,6 +4,7 @@ export function applyToFirebase(firebase, user, data, collectionName) {
     }
     let commentsRef;
     const db = firebase.firestore();
+    const analytics = firebase.analytics();
     commentsRef = db.collection(collectionName);
 
     const { serverTimestamp } = firebase.firestore.FieldValue;
@@ -14,6 +15,7 @@ export function applyToFirebase(firebase, user, data, collectionName) {
         createdAt: serverTimestamp(),
         name: user.displayName,
     }).then(() => {
+        firebase.analytics().logEvent('create-comment');
         location.reload();
     });
 
@@ -91,6 +93,7 @@ export async function readFirebase(firebase, collectionName, element, user){
 
 export function removeFromFirebase(firebase, collectionName, id){
     const db = firebase.firestore();
+    const analytics = firebase.analytics();
 
     console.log(id);
 
@@ -103,6 +106,7 @@ export function removeFromFirebase(firebase, collectionName, id){
             return Promise.all(promises);
         })
         .then(() => {
-          window.location.reload()
+            firebase.analytics().logEvent('delete-comment');
+            window.location.reload();
         });
 }

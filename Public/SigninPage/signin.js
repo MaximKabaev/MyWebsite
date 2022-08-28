@@ -3,6 +3,7 @@
 console.log(firebase);
 
 const auth = firebase.auth();
+const analytics = firebase.analytics();
 
 //Change providers
 
@@ -28,6 +29,7 @@ signInGoogle.onclick = () => auth.signInWithPopup(googleProvider);
 
 auth.onAuthStateChanged(user => {
     if (user) {
+        firebase.analytics().logEvent('login');
         location.href = localStorage.getItem('pageAfterSignIn');
     }
 });
